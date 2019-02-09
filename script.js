@@ -109,29 +109,49 @@
 // console.log(tips)
 // console.log(totalBill);
 
-/* Objects and properties */
+/* *********** Objects and properties ************* */
 
 // Object literal
+// var john = {
+//     firstName: 'John',
+//     lastName: 'Smith',
+//     birthYear: 1990,
+//     family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//     job: 'teacher',
+//     isMarried: false
+// };
+
+// console.log(john.firstName);
+// console.log(john['lastName']);
+// var x = 'birthYear';
+// console.log(john[x]);
+
+// john.job = 'designer';
+// john['isMarried'] = true;
+// console.log(john);
+
+// var jane = new Object();
+// jane.firstName = 'Jane';
+// jane.birthYear = 1969;
+// jane['lastName'] = 'Smith';
+// console.log(jane);
+
+
+/* *********Objects and Methods ************ */
+
 var john = {
     firstName: 'John',
     lastName: 'Smith',
     birthYear: 1990,
     family: ['Jane', 'Mark', 'Bob', 'Emily'],
     job: 'teacher',
-    isMarried: false
+    isMarried: false,
+    calculateAge: function(birthYear) {
+        return 2019 - this.birthYear; // this refers to the object, in this case john
+        // this.age = 2018 - this.birthYear <-- is another way to write this
+    }
 };
 
-console.log(john.firstName);
-console.log(john['lastName']);
-var x = 'birthYear';
-console.log(john[x]);
+console.log(john.calculateAge(1990));
+john.age = john.calculateAge();
 
-john.job = 'designer';
-john['isMarried'] = true;
-console.log(john);
-
-var jane = new Object();
-jane.firstName = 'Jane';
-jane.birthYear = 1969;
-jane['lastName'] = 'Smith';
-console.log(jane);
