@@ -53,37 +53,58 @@
 /* ********* ARRAYS ************** */
 
 // Initialize new array
-var names = ['John', 'Mike', 'Mary'];
-var years = new Array (1990, 1948, 1969);
+// var names = ['John', 'Mike', 'Mary'];
+// var years = new Array (1990, 1948, 1969);
 
-console.log(names);
-console.log(names.length);
+// console.log(names);
+// console.log(names.length);
 
-// Mutate array data
-names[1] = 'Ben';
-names[names.length] = 'Jane';
-console.log(names);
+// // Mutate array data
+// names[1] = 'Ben';
+// names[names.length] = 'Jane';
+// console.log(names);
 
-// Different data types
-var john = ['John', 'Smith', 1990, 'teacher', false];
+// // Different data types
+// var john = ['John', 'Smith', 1990, 'teacher', false];
 
-// .push adds item to end of array
-john.push('blue');
-// .unshit adds item to the beginning of an array
-john.unshift('Mr.');
-console.log(john);
+// // .push adds item to end of array
+// john.push('blue');
+// // .unshit adds item to the beginning of an array
+// john.unshift('Mr.');
+// console.log(john);
 
-// .pop removes the last item of an array
-john.pop();
-john.pop();
-// .shift removes the first item of an array
-john.shift();
-console.log(john);
+// // .pop removes the last item of an array
+// john.pop();
+// john.pop();
+// // .shift removes the first item of an array
+// john.shift();
+// console.log(john);
 
-// indexOf identifies the position of item in an array; it will return -1 if not present
-console.log(john.indexOf(1990))
+// // indexOf identifies the position of item in an array; it will return -1 if not present
+// console.log(john.indexOf(1990))
 
-// ? = then, : = else
-// If 'designer' is not present in the array then (?) 'John is NOT a designer' else (:) 'John IS a designer'
-var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John IS a designer';
-console.log(isDesigner);    
+// // ? = then, : = else
+// // If 'designer' is not present in the array then (?) 'John is NOT a designer' else (:) 'John IS a designer'
+// var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John IS a designer';
+// console.log(isDesigner);    
+
+// TIP CALCULATOR CHALLENGE 
+
+function calculateTip (bill) {
+    var percentage;
+    if (bill < 50) {
+        percentage =.2;
+    }
+    else if (bill >=50 && bill <= 200) {
+        percentage =.15;    
+    } else {
+        percentage=.1;
+    }
+    return percentage * bill;
+}
+
+var bills = [124, 48, 268];
+var tips = [calculateTip(bills[0]), calculateTip(bills[1]), calculateTip(bills[2])];
+var totalBill = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips [2]];
+console.log(tips)
+console.log(totalBill);
