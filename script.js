@@ -253,9 +253,6 @@ var john = {
     }
 }
 
-john.calculateTip();
-console.log(john);
-
 var mark = {
     fullName: 'Mark Morrison',
     bills: [77, 475, 110, 45],
@@ -283,3 +280,7 @@ var mark = {
         }
     }
 }
+
+john.calculateTip();
+mark.calculateTip();
+console.log(john, mark);
