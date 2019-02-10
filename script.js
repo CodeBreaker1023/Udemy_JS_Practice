@@ -225,80 +225,176 @@
 
 /* ****** Tip Calculator Challenge Part 2 ******* */
 
-var john = {
-    fullName: 'John Smith',
-    bills: [124, 48, 268, 180, 42],
-    calculateTip: function () {
-        this.tips = [];
-        this.totalBills = [];
+// var john = {
+//     fullName: 'John Smith',
+//     bills: [124, 48, 268, 180, 42],
+//     calculateTip: function () {
+//         this.tips = [];
+//         this.totalBills = [];
 
-        for (var i = 0; i < this.bills.length; i++) {
-            // Determine percentage base on tipping rules
-            var percentage;
-            var bill = this.bills[i];
+//         for (var i = 0; i < this.bills.length; i++) {
+//             // Determine percentage base on tipping rules
+//             var percentage;
+//             var bill = this.bills[i];
 
-            if (bill < 50) {
-                percentage =.2;
-            }
-            else if (bill >=50 && bill <= 200) {
-                percentage =.15;    
-            } else {
-                percentage=.1;  
-            }
+//             if (bill < 50) {
+//                 percentage =.2;
+//             }
+//             else if (bill >=50 && bill <= 200) {
+//                 percentage =.15;    
+//             } else {
+//                 percentage=.1;  
+//             }
 
-            // Add results to corresponding arrays
-            this.tips[i] = bill * percentage;
-            this.totalBills[i] = bill + bill * percentage;
-        }
+//             // Add results to corresponding arrays
+//             this.tips[i] = bill * percentage;
+//             this.totalBills[i] = bill + bill * percentage;
+//         }
+//     }
+// }
+
+// var mark = {
+//     fullName: 'Mark Morrison',
+//     bills: [77, 475, 110, 45],
+//     calculateTip: function () {
+//         this.tips = [];
+//         this.totalBills = [];
+
+//         for (var i = 0; i < this.bills.length; i++) {
+//             // Determine percentage base on tipping rules
+//             var percentage;
+//             var bill = this.bills[i];
+
+//             if (bill < 100) {
+//                 percentage =.2;
+//             }
+//             else if (bill >=100 && bill <= 300) {
+//                 percentage =.1;    
+//             } else {
+//                 percentage=.25;  
+//             }
+
+//             // Add results to corresponding arrays
+//             this.tips[i] = bill * percentage;
+//             this.totalBills[i] = bill + bill * percentage;
+//         }
+//     }
+// }
+
+// function calcAverage(tips) {
+//     var sum = 0;
+//     for (var i = 0; i < tips.length; i++) {
+//         sum = sum + tips[i];
+//     }
+//     return sum / tips.length;
+// }
+
+
+// john.calculateTip();
+// mark.calculateTip();
+
+// john.average = calcAverage(john.tips);
+// mark.average = calcAverage(mark.tips);
+// console.log(john, mark);
+
+// if (john.average > mark.average) {
+//     console.log(john.fullName + '\'s family pays higher tips with an average of $' + john.average);
+// } else if (mark.average > john.average) {
+//     console.log(mark.fullName + '\'s family pays higher tips with an average of $' + mark.average);
+//     }
+
+///////////////////////////////////////
+// Lecture: Hoisting
+
+// *** Hoisting ONLY works for Function Declarations
+// This code below will execute because it's a function declaration
+calculateAge(1965);
+
+function calculateAge(year) {
+    console.log(2016-year);
+}
+
+
+// *** This a function expression
+// The code below will not execute because hoisting is not applied to expressions
+retirement(1965);
+
+var retirement = function (year) {
+    console.log(65 - (2016 - year));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////
+// Lecture: Scoping
+
+
+// First scoping example
+
+/*
+var a = 'Hello!';
+first();
+
+function first() {
+    var b = 'Hi!';
+    second();
+
+    function second() {
+        var c = 'Hey!';
+        console.log(a + b + c);
+    }
+}
+*/
+
+
+
+// Example to show the differece between execution stack and scope chain
+
+/*
+var a = 'Hello!';
+first();
+
+function first() {
+    var b = 'Hi!';
+    second();
+
+    function second() {
+        var c = 'Hey!';
+        third()
     }
 }
 
-var mark = {
-    fullName: 'Mark Morrison',
-    bills: [77, 475, 110, 45],
-    calculateTip: function () {
-        this.tips = [];
-        this.totalBills = [];
-
-        for (var i = 0; i < this.bills.length; i++) {
-            // Determine percentage base on tipping rules
-            var percentage;
-            var bill = this.bills[i];
-
-            if (bill < 100) {
-                percentage =.2;
-            }
-            else if (bill >=100 && bill <= 300) {
-                percentage =.1;    
-            } else {
-                percentage=.25;  
-            }
-
-            // Add results to corresponding arrays
-            this.tips[i] = bill * percentage;
-            this.totalBills[i] = bill + bill * percentage;
-        }
-    }
+function third() {
+    var d = 'John';
+    console.log(a + b + c + d);
 }
-
-function calcAverage(tips) {
-    var sum = 0;
-    for (var i = 0; i < tips.length; i++) {
-        sum = sum + tips[i];
-    }
-    return sum / tips.length;
-}
+*/
 
 
-john.calculateTip();
-mark.calculateTip();
 
-john.average = calcAverage(john.tips);
-mark.average = calcAverage(mark.tips);
-console.log(john, mark);
+///////////////////////////////////////
+// Lecture: The this keyword
 
-if (john.average > mark.average) {
-    console.log(john.fullName + '\'s family pays higher tips with an average of $' + john.average);
-} else if (mark.average > john.average) {
-    console.log(mark.fullName + '\'s family pays higher tips with an average of $' + mark.average);
-    }
+
+
+
+
+
+
+
+
