@@ -207,7 +207,7 @@
 // }
 
 // Continue and Break statements
-var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
+// var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
 // for (var i = 0; i < john.length; i++) {
 //     if (typeof john[i] !== 'string') continue;
 //     console.log(john[i]);
@@ -219,6 +219,39 @@ var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
 // }
 
 // Looping backwards
-for (var i = john.length - 1; i >= 0; i--) {
-    console.log(john[i]);
+// for (var i = john.length - 1; i >= 0; i--) {
+//     console.log(john[i]);
+// }
+
+/* ****** Tip Calculator Challenge Part 2 ******* */
+
+var john = {
+    fullName: 'John Smith',
+    bills: [124, 48, 268, 180, 42],
+    calculateTip: function () {
+        this.tips = [];
+        this.totalBills = [];
+
+        for (var i = 0; i < this.bills.length; i++) {
+            // Determine percentage base on tipping rules
+            var percentage;
+            var bill = this.bills[i];
+
+            if (bill < 50) {
+                percentage =.2;
+            }
+            else if (bill >=50 && bill <= 200) {
+                percentage =.15;    
+            } else {
+                percentage=.1;  
+            }
+
+            // Add results to corresponding arrays
+            this.tips[i] = bill * percentage;
+            this.totalBills[i] = bill + bill * percentage;
+        }
+    }
 }
+
+john.calculateTip();
+console.log(john);
