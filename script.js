@@ -137,21 +137,54 @@
 // console.log(jane);
 
 
-/* *********Objects and Methods ************ */
+// /* *********Objects and Methods ************ */
 
+// var john = {
+//     firstName: 'John',
+//     lastName: 'Smith',
+//     birthYear: 1990,
+//     family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//     job: 'teacher',
+//     isMarried: false,
+//     calculateAge: function(birthYear) {
+//         return 2019 - this.birthYear; // this refers to the object, in this case john
+//         // this.age = 2018 - this.birthYear <-- is another way to write this
+//     }
+// };
+
+// console.log(john.calculateAge(1990));
+// john.age = john.calculateAge();
+
+/* ******* BMI OBJECT CHALLENGE *********** */
 var john = {
-    firstName: 'John',
-    lastName: 'Smith',
-    birthYear: 1990,
-    family: ['Jane', 'Mark', 'Bob', 'Emily'],
-    job: 'teacher',
-    isMarried: false,
-    calculateAge: function(birthYear) {
-        return 2019 - this.birthYear; // this refers to the object, in this case john
-        // this.age = 2018 - this.birthYear <-- is another way to write this
+    fullName:'John Smith',
+    mass: 90,
+    height: 1.8,
+    calcBMI: function() {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
     }
-};
+}
 
-console.log(john.calculateAge(1990));
-john.age = john.calculateAge();
+var mark = {
+    fullName:'Mark Morrison',
+    mass: 110,
+    height: 2.2,
+    calcBMI: function() {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+}
 
+john.calcBMI();
+mark.calcBMI();
+console.log(john, mark);
+
+if (john.bmi > mark.bmi) {
+    console.log(john.fullName + ' has a higher BMI at ' + john.bmi + '.')
+} else if (mark.bmi > john.bmi) {
+    console.log(mark.fullName + ' has a higher BMI at ' + mark.bmi + '.')
+} else {
+    console.log('Mark and John have the same BMIs.')
+}
+ 
