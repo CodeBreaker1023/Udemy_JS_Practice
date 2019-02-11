@@ -317,12 +317,22 @@ function calculateAge(year) {
 
 // *** This a function expression
 // The code below will not execute because hoisting is not applied to expressions
-retirement(1965);
+// retirement(1965);
 
 var retirement = function (year) {
     console.log(65 - (2016 - year));
 }
 
+// variables
+console.log(age);
+var age = 23; 
+
+function foo() {
+    console.log(age);
+}
+
+foo();
+console.log(age);
 
 
 
