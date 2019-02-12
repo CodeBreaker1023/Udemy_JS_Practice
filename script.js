@@ -308,31 +308,31 @@
 
 // *** Hoisting ONLY works for Function Declarations
 // This code below will execute because it's a function declaration
-calculateAge(1965);
+// calculateAge(1965);
 
-function calculateAge(year) {
-    console.log(2016-year);
-}
+// function calculateAge(year) {
+//     console.log(2016-year);
+// }
 
 
-// *** This a function expression
-// The code below will not execute because hoisting is not applied to expressions
-// retirement(1965);
+// // *** This a function expression
+// // The code below will not execute because hoisting is not applied to expressions
+// // retirement(1965);
 
-var retirement = function (year) {
-    console.log(65 - (2016 - year));
-}
+// var retirement = function (year) {
+//     console.log(65 - (2016 - year));
+// }
 
-// variables
-console.log(age);
-var age = 23; 
+// // variables
+// console.log(age);
+// var age = 23; 
 
-function foo() {
-    console.log(age);
-}
+// function foo() {
+//     console.log(age);
+// }
 
-foo();
-console.log(age);
+// foo();
+// console.log(age);
 
 
 
@@ -400,9 +400,38 @@ function third() {
 ///////////////////////////////////////
 // Lecture: The this keyword
 
+calculateAge(1985);
 
+function calculateAge(year){
+    console.log(2016);
+    console.log(this);
+}
 
+var john = {
+    name: 'John',
+    yearOfBirth: 1990,
+    calculateAge: function() {
+        console.log(this);
+        console.log(2016-this.yearOfBirth);
 
+        function innerFunction() {
+            console.log(this);
+        }
+        innerFunction();
+    }
+}
+
+john.calculateAge();
+
+var mike = {
+    name: 'Mike',
+    yearOfBirth: 1984
+};
+
+// Method borrowing
+
+mike.calculateAge = john.calculateAge;
+mike.calculateAge();
 
 
 
