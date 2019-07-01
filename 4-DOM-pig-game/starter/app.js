@@ -36,7 +36,7 @@ document.getElementById('current-1').textContent = '0';
 // }
 // btn();
 
-// callback function - a function that pass into another function as an argument to be called
+// callback function - a function that passes into another function as an argument to be called
 // In this case, we are passing the btn() as argument in the addEventListener()
 // document.querySelector('.btn-roll').addEventListener('click', btn);
 
